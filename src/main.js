@@ -40,7 +40,7 @@ $(function () {
         });
 
         var customIcon = new L.Icon({
-            iconUrl: '/assets/images/point-13px.png',
+            iconUrl: './point-13px.png',
             iconSize: [13, 13],
             popupAnchor: [0, -13]
         });
@@ -116,7 +116,7 @@ $(function () {
                     my_jPlayer.jPlayer("play");
                 }
             },
-            swfPath: "/assets/javascripts/front",
+            swfPath: "../../src",
             supplied: "mp3,ogg",
             solution: "html,flash",
             wmode: "window",
