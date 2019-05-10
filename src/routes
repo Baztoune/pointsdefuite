@@ -10,7 +10,7 @@ _nS('controllers.MapController'); _root.controllers.MapController.viewLieu =
    
 _nS('controllers.MapController'); _root.controllers.MapController.renderPointsGeoAsJson = 
       function() {
-      return _wA({method:"GET", url:"/serveJson"})
+      return _wA({method:"GET", url:"/serveJson.json"})
       }
    
 })(jsRoutes)
