@@ -1,0 +1,302 @@
+html {
+    height: 100%;
+    font-family:"Average Sans",sans-serif;
+    font-size:100%;
+    background-color:#FAFCFB;
+}
+/* Global */
+body {
+    margin:0;
+    padding:0;
+    height:100%;
+    font-size: 16px;
+}
+h3 {
+    margin:0;
+}
+a{
+    text-decoration: none;
+    color:#000000;
+    font-style: italic;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+.textCenter{
+    text-align: center;
+}
+
+#map {
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:100%;
+}
+
+.container{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -60px;
+}
+
+div.absolute-center {
+    position: absolute;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    width: 128px;
+    height: 128px;
+    margin-top: -64px; /* Half the height */
+    margin-left: -64px; /* Half the width */
+    background:url(../../images/play.png) 100% no-repeat;
+    background-size: 100%;
+}
+div.absolute-center:hover {
+    cursor:pointer;
+}
+div.absolute-center:active {
+    margin-top: -62px;
+    margin-bottom: -66px;
+}
+.unjustified{
+    text-align: left;
+}
+
+/* Pages */
+.page-content{
+    max-width: 600px;
+    padding-bottom: 50px;
+    margin: auto;
+}
+.page-contact{
+    background: url(../../images/fond-pagecontacts.jpg) no-repeat top left;
+    background-size: contain;
+}
+.page-apropos{
+    background: url(../../images/fond-pageinfo.jpg) no-repeat top right;
+    background-size: contain;
+    font-size: 1.4em;
+}
+    .page-apropos .page-content{
+        margin: 100px 80px 0 80px;
+    }
+.apropos-text{
+    text-indent: 1.5em;
+    text-align: justify;
+    color:#898a89;
+}
+blockquote .author{
+    text-align:right;
+    padding-right:100px;
+    margin-bottom:50px;
+}
+
+.page-contact dl{
+    text-align:center;
+    font-size:2em;
+    margin-top:40px;
+}
+.page-contact dt{
+    margin-top:15px;
+    text-decoration: underline;
+}
+.page-contact dd{
+    color:#4D677E;
+}
+.section-2{
+    margin-top:70px !important;
+}
+
+/* Map */
+.logo-container{
+    padding:0 60px;
+}
+.logo{
+    width:auto;
+    max-width:500px;
+    margin:0 50px;
+    position: relative;
+    z-index: 1000;
+}
+    .logo img{
+        width:100%;
+    }
+
+
+.leaflet-popup-content-wrapper{
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.leaflet-popup-content{
+    margin:5px;
+}
+.leaflet-popup-tip{
+    padding:0;
+    margin-top:-10px;
+}
+.leaflet-container a{
+    color:#000;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.leaflet-marker-icon{
+    width:6px !important;
+    height:6px !important;
+    margin-left:-3px !important;
+    margin-top:-3px !important;
+}
+.zoom-medium .leaflet-marker-icon {
+    width:8px !important;
+    height:8px !important;
+    margin-left:-4px !important;
+    margin-top:-4px !important;
+}
+.zoom-medium-plus .leaflet-marker-icon {
+    width:10px !important;
+    height:10px !important;
+    margin-left:-5px !important;
+    margin-top:-5px !important;
+}
+.zoom-max .leaflet-marker-icon {
+    width:13px !important;
+    height:13px !important;
+    margin-left:-6.5px !important;
+    margin-top:-6.5px !important;
+}
+
+/* Footer */
+.transition-500{
+    -webkit-transition: all 0.5s ease-out;  /* Safari 3.2+, Chrome */
+       -moz-transition: all 0.5s ease-out;  /* Firefox 4-15 */
+         -o-transition: all 0.5s ease-out;  /* Opera 10.5–12.00 */
+            transition: all 0.5s ease-out;  /* Firefox 16+, Opera 12.50+ */
+}
+#footer, #push{
+    height: 60px;
+}
+#footer {
+    width:100%;
+    position: fixed;
+    bottom:0;
+    border-top: 1px rgba(77, 77, 77, 0.18) solid;
+    background: rgba(248, 249, 249, 0.18);
+}
+.invisible{
+    opacity: 0;
+    -moz-opacity: 0;
+    filter: alpha(opacity=0);
+}
+#footer:hover{
+    background: rgba(248, 249, 249, 1);
+    border-top: 1px rgba(77, 77, 77, 1) solid;
+}
+    #footer .footer-center{
+        position: relative;
+        margin: 0 auto;
+        width:auto;
+        max-width: 601px;
+        padding-top: 5px;
+    }
+
+.footer-left-block, .footer-center-block, .footer-right-block{
+    float:left;
+}
+.footer-left-block{
+    width:160px;
+}
+.footer-center-block{
+    width:201px;
+    margin:0 40px;
+}
+.footer-right-block{
+    width:160px;
+}
+.footer-right{
+    float:right;
+    padding-top:5px;
+}
+
+
+
+/* icons */
+.icon-placeholder{
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+}
+.icon-placeholder a:hover{
+    cursor:pointer;
+}
+.icon-placeholder:active{
+    margin-top:2px;
+    margin-bottom:-2px;
+}
+.icon-map-placeholder{
+    width:96px;
+    height:48px;
+}
+.icon-placeholder a, .icon-map-placeholder a{
+    display:block;
+    width:100%;
+    height:100%;
+}
+.icon{
+    background-image:url(../../images/control-icons.png);
+}
+.icon.invisible{
+    display:none;
+}
+.icon-info{ background-position:0px -48px; }
+.icon-fullscreen{ background-position:0px -144px; }
+.icon-play{ background-position:0px -384px; }
+.icon-mute{ background-position:0px -336px; }
+.icon-unmute{ background-position:0px -624px; }
+.icon-random{ background-position:0px -96px; }
+.icon-prev{ background-position:0px -240px; }
+.icon-map{ background-position:0px -672px; }
+.icon-next{ background-position:0px -288px; }
+.icon-fb{ background-position:0px -432px; }
+.icon-tw{ background-position:0px -528px; }
+.icon-contact{ background-position:0px -576px; }
+.icon-gp{ background-position:0px -480px; }
+.icon-info:hover{ background-position:48px -48px; }
+.icon-fullscreen:hover{ background-position:48px -144px; }
+.icon-play:hover{ background-position:48px -384px; }
+.icon-mute:hover{ background-position:48px -336px; }
+.icon-unmute:hover{ background-position:48px -624px; }
+.icon-random:hover{ background-position:48px -96px; }
+.icon-prev:hover{ background-position:48px -240px; }
+.icon-map:hover{ background-position:0px -720px; }
+.icon-next:hover{ background-position:48px -288px; }
+.icon-fb:hover{ background-position:48px -432px; }
+.icon-tw:hover{ background-position:48px -528px; }
+.icon-gp:hover{ background-position:48px -480px; }
+.icon-contact:hover{ background-position:48px -576px; }
+
+
+
+/* Responsive */
+@media (max-width: 800px) {
+    .footer-center{
+        width:200px;
+    }
+    .footer-right-block{
+        display:none;
+    }
+    .footer-left-block{
+        display:none;
+    }
+    .footer-center-block{
+        float:none;
+        margin:0 auto;
+        padding-right:100px;
+    }
+}
+@media (max-width: 480px) {
+    .icon-fullscreen{
+        display:none;
+    }
+}
