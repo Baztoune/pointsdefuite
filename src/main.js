@@ -40,7 +40,7 @@ $(function () {
         });
 
         var customIcon = new L.Icon({
-            iconUrl: './point-13px.png',
+            iconUrl: './src/point-13px.png',
             iconSize: [13, 13],
             popupAnchor: [0, -13]
         });
