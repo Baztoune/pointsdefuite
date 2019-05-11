@@ -1,3 +1,5 @@
+---
+---
 var toggleFullScreen = function toggleFullScreen() {
     var isFs = document.fullscreen || document.mozFullScreen || document.webkitIsFullScreen;
     if ((document.fullScreenElement && document.fullScreenElement !== null) ||    // alternative standard method
@@ -40,7 +42,7 @@ $(function () {
         });
 
         var customIcon = new L.Icon({
-            iconUrl: './src/point-13px.png',
+            iconUrl: "{{ '/assets/images/point-13px.png' | relative_url }}",
             iconSize: [13, 13],
             popupAnchor: [0, -13]
         });

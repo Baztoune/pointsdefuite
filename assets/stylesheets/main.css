@@ -1,3 +1,5 @@
+---
+---
 html {
     height: 100%;
     font-family:"Average Sans",sans-serif;
@@ -50,7 +52,7 @@ div.absolute-center {
     height: 128px;
     margin-top: -64px; /* Half the height */
     margin-left: -64px; /* Half the width */
-    background:url(../../images/play.png) 100% no-repeat;
+    background:url({{ '/assets/images/play.png' | relative_url }}) 100% no-repeat;
     background-size: 100%;
 }
 div.absolute-center:hover {
@@ -71,11 +73,11 @@ div.absolute-center:active {
     margin: auto;
 }
 .page-contact{
-    background: url(../../images/fond-pagecontacts.jpg) no-repeat top left;
+    background: url({{ '/assets/images/fond-pagecontacts.jpg' | relative_url }}) no-repeat top left;
     background-size: contain;
 }
 .page-apropos{
-    background: url(../../images/fond-pageinfo.jpg) no-repeat top right;
+    background: url({{ '/assets/images/fond-pageinfo.jpg' | relative_url }}) no-repeat top right;
     background-size: contain;
     font-size: 1.4em;
 }
@@ -244,7 +246,7 @@ blockquote .author{
     height:100%;
 }
 .icon{
-    background-image:url(./control-icons.png);
+    background-image:url({{ '/assets/images/control-icons.png' | relative_url }});
 }
 .icon.invisible{
     display:none;
