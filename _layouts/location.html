@@ -5,9 +5,9 @@ nav: page-photo
 ---
 
 <div id="debug"></div>
-<div id="image-wrapper" class="container" data-jpg="/assets/locations/{{page.mypath}}/{{page.mypath}}.jpg">
+<div id="image-wrapper" class="container" data-jpg="/assets/{{page.assets}}.jpg">
     <div id="push"></div>
 </div>
-<div id="player-wrapper" data-mp3="/assets/locations/{{page.mypath}}/{{page.mypath}}.mp3" data-ogg="/assets/locations/{{page.mypath}}/{{page.mypath}}.ogg"></div>
-PATH={{page.mypath}}//{{page.path}}//{{page.relative_path}}//{{page.url}}//{{page.name}}
+<div id="player-wrapper" data-mp3="/assets/{{page.assets}}.mp3" data-ogg="/assets/{{page.assets}}.ogg"></div>
+
 {% include footer.html %}

@@ -4,10 +4,12 @@ layout: main
 permalink: /locations/
 ---
 {% for location in site.locations %}
-<h2>
-    <a href="{{ location.url }}">
-        {{ location.name }} - {{ location.position }}
-    </a>
-</h2>
-<p>{{ location.content }}</p>
+<ul>
+    <li>
+        <a href="{{ location.url }}">
+            {{location.url}} ({{location.lat}}/{{location.lon}})
+        </a>
+    </li>
+</ul>
+
 {% endfor %}

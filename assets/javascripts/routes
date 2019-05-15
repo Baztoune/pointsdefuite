@@ -5,12 +5,12 @@ var _s = function(p,s){return p+((s===true||(s&&s.secure))?'s':'')+'://'}
 var _wA = function(r){return {ajax:function(c){c.url=r.url;c.type=r.method;return jQuery.ajax(c)}, method:r.method,url:r.url,absoluteURL: function(s){return _s('http',s)+'www.pointsdefuite.net'+r.url},webSocketURL: function(s){return _s('ws',s)+'www.pointsdefuite.net'+r.url}}}
 _nS('controllers.MapController'); _root.controllers.MapController.viewLieu = 
       function(friendlyUrlName) {
-      return _wA({method:"GET", url:"/paysage/" + (function(k,v) {return v})("friendlyUrlName", friendlyUrlName)})
+      return _wA({method:"GET", url:"" + (function(k,v) {return v})("friendlyUrlName", friendlyUrlName)})
       }
    
 _nS('controllers.MapController'); _root.controllers.MapController.renderPointsGeoAsJson = 
       function() {
-      return _wA({method:"GET", url:"/serveJson.json"})
+      return _wA({method:"GET", url:"/locations.json"})
       }
    
 })(jsRoutes)
