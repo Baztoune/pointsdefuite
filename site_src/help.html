@@ -28,13 +28,15 @@ permalink: /help
     height:400px;
     width:600px;
 }
+.texta{
+width:100%;
+height:200px;
+}
     </style>
 </head>
 <body class="admin">
 
-<input type="text" class="latInput"/>
-<input type="text" class="lonInput"/>
-
+<textarea class="texta"></textarea>
 <div class="map-container"><div id="map"></div></div>
 
 
@@ -49,19 +51,23 @@ $(function(){
         $('#map').css('cursor', 'crosshair');
         var map = L.map('map').setView([48.893615361480194, 2.3291015625], 5);
         var markerLayer = new L.LayerGroup().addTo(map);
-        var lat = $('.latInput')[0].value;
-        var lon = $('.lonInput')[0].value;
-        if(lat && lon ){
-            markerLayer.addLayer(L.marker([lat,lon]));
-            map.panTo([lat,lon]).setZoom(10);
-        }
+
         L.Icon.Default.imagePath = '{{ '/assets/images' | relative_url }}';
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 18
         }).addTo(map);
+
         map.on('click', function(e) {
-            $('.lonInput')[0].value= e.latlng.lng;
-            $('.latInput')[0].value= e.latlng.lat;
+            var s = "---" + "\n"+
+                "layout: location" + "\n"+
+                "\n"+
+                "title: Exemple de titre" + "\n"+
+                "assets: /photos/exemple" + "\n"+
+                "lat: " + e.latlng.lat + "\n"+
+                "lon: " + e.latlng.lng + "\n"+
+                "---" + "\n"
+            $('.texta')[0].value= s
+
             markerLayer.clearLayers();
             markerLayer.addLayer(L.marker([e.latlng.lat,e.latlng.lng]));
         });
