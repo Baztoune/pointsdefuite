@@ -55,6 +55,7 @@ $(function(){
             markerLayer.addLayer(L.marker([lat,lon]));
             map.panTo([lat,lon]).setZoom(10);
         }
+        L.Icon.Default.imagePath = '{{ '/assets/images' | relative_url }}';
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 18
         }).addTo(map);
