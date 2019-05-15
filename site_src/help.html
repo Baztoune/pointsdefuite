@@ -1,0 +1,72 @@
+---
+permalink: /help
+---
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Help</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.css" />
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.ie.css" />
+    <![endif]-->
+    <style>
+
+#map { position:absolute; top:0; bottom:0; width:100%;}
+.map-container{
+    position:relative;
+    height:400px;
+    width:600px;
+}
+    </style>
+</head>
+<body class="admin">
+
+<input type="text" class="latInput"/>
+<input type="text" class="lonInput"/>
+
+<div class="map-container"><div id="map"></div></div>
+
+
+
+<script src="{{ '/assets/javascripts/jquery-1.7.1.min.js' | relative_url }}" type="text/javascript"></script>
+<script src="{{ '/assets/javascripts/leaflet-0.5.1.js' | relative_url }}" type="text/javascript"></script>
+<script src="{{ '/assets/javascripts/mapbox-0.6.6.min.js' | relative_url }}" type="text/javascript"></script>
+
+<script>
+$(function(){
+    if ($('#map').length > 0) {
+        $('#map').css('cursor', 'crosshair');
+        var map = L.map('map').setView([48.893615361480194, 2.3291015625], 5);
+        var markerLayer = new L.LayerGroup().addTo(map);
+        var lat = $('.latInput')[0].value;
+        var lon = $('.lonInput')[0].value;
+        if(lat && lon ){
+            markerLayer.addLayer(L.marker([lat,lon]));
+            map.panTo([lat,lon]).setZoom(10);
+        }
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18
+        }).addTo(map);
+        map.on('click', function(e) {
+            $('.lonInput')[0].value= e.latlng.lng;
+            $('.latInput')[0].value= e.latlng.lat;
+            markerLayer.clearLayers();
+            markerLayer.addLayer(L.marker([e.latlng.lat,e.latlng.lng]));
+        });
+    }
+});
+</script>
+
+</body>
+</html>
