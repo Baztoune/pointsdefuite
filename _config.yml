@@ -1,2 +1,7 @@
-name: Points de Fuite
+title: Points de Fuite
 url: https://pointsdefuite.b5n.fr
+exclude: [.idea]
+collections:
+  locations:
+    output: true
+    permalink: /paysage/:path
