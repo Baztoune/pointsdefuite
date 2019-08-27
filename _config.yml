@@ -1,5 +1,6 @@
 title: Points de Fuite
 url: https://pointsdefuite.b5n.fr
+repository: Baztoune/pointsdefuite.github.io
 exclude: [.idea]
 collections:
   locations:

@@ -9,7 +9,8 @@ permalink: /locations.json
     "titre": "{{location.title}}",
     "friendlyUrlName": "{{location.url}}",
     "latitude": "{{location.lat}}",
-    "longitude": "{{location.lon}}"
+    "longitude": "{{location.lon}}",
+    "assets": "{{location.assets}}"
 }
     {% unless forloop.last %},{% endunless %}
 {% endfor %}
