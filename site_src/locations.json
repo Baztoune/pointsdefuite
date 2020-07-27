@@ -7,7 +7,7 @@ permalink: /locations.json
 {% for location in site.locations %}
   {
     "titre": "{{location.title}}",
-    "friendlyUrlName": "{{location.url}}/",
+    "friendlyUrlName": "{{location.url}}",
     "latitude": "{{location.lat}}",
     "longitude": "{{location.lon}}"
   }
