@@ -5,75 +5,90 @@ permalink: /help
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Help</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
     <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.css" />
+    <link
+      rel="stylesheet"
+      href="//cdn.leafletjs.com/leaflet-0.4.5/leaflet.css"
+    />
     <!--[if lte IE 8]>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4.5/leaflet.ie.css" />
+      <link
+        rel="stylesheet"
+        href="//cdn.leafletjs.com/leaflet-0.4.5/leaflet.ie.css"
+      />
     <![endif]-->
     <style>
-
-#map { position:absolute; top:0; bottom:0; width:100%;}
-.map-container{
-    position:relative;
-    height:400px;
-    width:600px;
-}
-.texta{
-width:100%;
-height:200px;
-}
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+      .map-container {
+        position: relative;
+        height: 400px;
+        width: 600px;
+      }
+      .texta {
+        width: 100%;
+        height: 200px;
+      }
     </style>
-</head>
-<body class="admin">
+  </head>
+  <body class="admin">
+    <textarea class="texta"></textarea>
+    <div class="map-container"><div id="map"></div></div>
 
-<textarea class="texta"></textarea>
-<div class="map-container"><div id="map"></div></div>
+    <script
+      src="{{ '/assets/javascripts/jquery-1.7.1.min.js' | relative_url }}"
+      type="text/javascript"
+    ></script>
+    <script
+      src="{{ '/assets/javascripts/leaflet-0.5.1.js' | relative_url }}"
+      type="text/javascript"
+    ></script>
+    <script
+      src="{{ '/assets/javascripts/mapbox-0.6.6.min.js' | relative_url }}"
+      type="text/javascript"
+    ></script>
 
+    <script>
+      $(function(){
+          if ($('#map').length > 0) {
+              $('#map').css('cursor', 'crosshair');
+              var map = L.map('map').setView([48.893615361480194, 2.3291015625], 5);
+              var markerLayer = new L.LayerGroup().addTo(map);
 
+              L.Icon.Default.imagePath = '{{ '/assets/images' | relative_url }}';
+              L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                  maxZoom: 18
+              }).addTo(map);
 
-<script src="{{ '/assets/javascripts/jquery-1.7.1.min.js' | relative_url }}" type="text/javascript"></script>
-<script src="{{ '/assets/javascripts/leaflet-0.5.1.js' | relative_url }}" type="text/javascript"></script>
-<script src="{{ '/assets/javascripts/mapbox-0.6.6.min.js' | relative_url }}" type="text/javascript"></script>
+              map.on('click', function(e) {
+                  var s = "---" + "\n"+
+                      "layout: location" + "\n"+
+                      "\n"+
+                      "title: Exemple de titre" + "\n"+
+                      "assets: /photos/exemple" + "\n"+
+                      "lat: " + e.latlng.lat + "\n"+
+                      "lon: " + e.latlng.lng + "\n"+
+                      "---" + "\n"
+                  $('.texta')[0].value= s
 
-<script>
-$(function(){
-    if ($('#map').length > 0) {
-        $('#map').css('cursor', 'crosshair');
-        var map = L.map('map').setView([48.893615361480194, 2.3291015625], 5);
-        var markerLayer = new L.LayerGroup().addTo(map);
-
-        L.Icon.Default.imagePath = '{{ '/assets/images' | relative_url }}';
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 18
-        }).addTo(map);
-
-        map.on('click', function(e) {
-            var s = "---" + "\n"+
-                "layout: location" + "\n"+
-                "\n"+
-                "title: Exemple de titre" + "\n"+
-                "assets: /photos/exemple" + "\n"+
-                "lat: " + e.latlng.lat + "\n"+
-                "lon: " + e.latlng.lng + "\n"+
-                "---" + "\n"
-            $('.texta')[0].value= s
-
-            markerLayer.clearLayers();
-            markerLayer.addLayer(L.marker([e.latlng.lat,e.latlng.lng]));
-        });
-    }
-});
-</script>
-
-</body>
+                  markerLayer.clearLayers();
+                  markerLayer.addLayer(L.marker([e.latlng.lat,e.latlng.lng]));
+              });
+          }
+      });
+    </script>
+  </body>
 </html>
