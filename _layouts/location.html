@@ -4,9 +4,9 @@ layout: main
 nav: page-photo
 ---
 
-<div id="image-wrapper" class="container" data-jpg="./photo.jpg">
+<div id="image-wrapper" class="container" data-jpg="./{{page.slug}}/photo.jpg">
     <div id="push"></div>
 </div>
-<div id="player-wrapper" data-mp3="./sound.mp3" data-ogg="./sound.ogg"></div>
+<div id="player-wrapper" data-mp3="./{{page.slug}}/sound.mp3" data-ogg="./{{page.slug}}/sound.ogg"></div>
 
 {% include footer.html %}
