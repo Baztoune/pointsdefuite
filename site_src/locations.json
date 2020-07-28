@@ -5,12 +5,12 @@ permalink: /locations.json
 ---
 [
 {% for location in site.locations %}
-  {
+  {% unless location.disable %}{
     "titre": "{{location.title}}",
     "friendlyUrlName": "{{location.url}}",
     "latitude": "{{location.lat}}",
     "longitude": "{{location.lon}}"
-  }
-    {% unless forloop.last %},{% endunless %}
+  }{% unless forloop.last %},{% endunless %}
+  {% endunless %}
 {% endfor %}
 ]
