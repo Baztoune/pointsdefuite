@@ -105,8 +105,8 @@ $(function () {
         my_jPlayer.jPlayer({
             ready: function () {
                 $(this).jPlayer("setMedia", {
-                    mp3: my_jPlayer.attr('data-mp3'),
-                    oga: my_jPlayer.attr('data-oga'),
+                    mp3: './'+my_jPlayer.attr('data-mp3'),
+                    oga: './'+my_jPlayer.attr('data-oga'),
                     volume:0
                 });
                 if($.jPlayer.platform.mobile || $.jPlayer.platform.tablet) {
@@ -164,7 +164,7 @@ $(function () {
 
         // background
         $.vegas({
-            src:$('#image-wrapper').attr('data-jpg'),
+            src:'./'+$('#image-wrapper').attr('data-jpg'),
             fade:2000,
             loading:false
         });
