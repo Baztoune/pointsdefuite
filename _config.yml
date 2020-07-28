@@ -5,4 +5,4 @@ exclude: [.idea]
 collections:
   locations:
     output: true
-    permalink: /paysage/:path
+    permalink: /paysage/:path/
