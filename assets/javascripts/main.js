@@ -51,38 +51,33 @@ $(function () {
         map.addLayer(markerLayer);
 
         // load markers
-        jsRoutes.controllers.MapController.renderPointsGeoAsJson().ajax({
-            success : function (data) {
-                for (var i = 0; i < data.length; i++) {
-                    var location = new L.LatLng(data[i].latitude, data[i].longitude);
-                    var titre = data[i].titre;
-                    var marker = new L.Marker(location, {
-                        icon: customIcon,
-                        riseOnHover: true
-                    });
-                    marker.bindPopup(
-                          "<div class=\"textCenter\">"
-                        + "<a href=\"" + jsRoutes.controllers.MapController.viewLieu(data[i].friendlyUrlName).url + "\">"
-                        + titre
-                        + "</a>"
-                        + "</div>", {
-                            maxWidth: '400',
-                            closeButton: false,
-                            offset: new L.Point(0, 6)
-                        }
-                    );
-                    markerLayer.addLayer(marker);
-                }
-                if (firstLoad == true) {
-                    window.setTimeout(function(){
-                        map.fitBounds(markerLayer.getBounds());
-                        firstLoad = false;
-                    }, 900);
-                };
-            },
-            error : function () {
-                alert("Erreur de chargement des markers!");
+        $.getJSON('/locations.json', function (data) {
+            for (var i = 0; i < data.length; i++) {
+                var location = new L.LatLng(data[i].latitude, data[i].longitude);
+                var titre = data[i].titre;
+                var marker = new L.Marker(location, {
+                    icon: customIcon,
+                    riseOnHover: true
+                });
+                marker.bindPopup(
+                      "<div class=\"textCenter\">"
+                    + "<a href=\"" + data[i].friendlyUrlName + "\">"
+                    + titre
+                    + "</a>"
+                    + "</div>", {
+                        maxWidth: '400',
+                        closeButton: false,
+                        offset: new L.Point(0, 6)
+                    }
+                );
+                markerLayer.addLayer(marker);
             }
+            if (firstLoad == true) {
+                window.setTimeout(function(){
+                    map.fitBounds(markerLayer.getBounds());
+                    firstLoad = false;
+                }, 900);
+            };
         });
 
         // events
