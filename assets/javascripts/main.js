@@ -28,8 +28,9 @@ $(function () {
     if ($('#map').length > 0) {
         // map
         var firstLoad = true;
-        var tileLayer = L.tileLayer('http://{s}.tiles.mapbox.com/v3/{key}/{z}/{x}/{y}.png', {
-            key:$('#map').attr('data-mapboxId'),
+        var tileLayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            id: 'baztoune/ckp1ia04k2yky18rw1ml5hw7c',
+            accessToken: 'pk.eyJ1IjoiYmF6dG91bmUiLCJhIjoib0Q0LWtMQSJ9.yK53blLhQb69aKjqo2CAZQ',
             attribution:'<a href="http://mapbox.com/about/maps">Mapbox Terms</a>',
             maxZoom:10,
             minZoom:2
