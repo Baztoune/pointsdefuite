@@ -1,50 +1,100 @@
 <!DOCTYPE html>
-<html class=" js fullscreen {{ page.nav }}"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html class=" js fullscreen {{ page.nav }}">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
     <title>{{ page.title }} | {{ site.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-    <link rel="shortcut icon" type="image/png" href="/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
 
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Average+Sans" type="text/css">
-    <link rel="stylesheet" href="{{ '/assets/stylesheets/normalize-2.0.1.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/stylesheets/leaflet-0.5.1.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/stylesheets/jquery.vegas.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/stylesheets/main.css' | relative_url }}">
+    <link
+      rel="stylesheet"
+      href="//fonts.googleapis.com/css?family=Average+Sans"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/stylesheets/normalize-2.0.1.css' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/stylesheets/leaflet-0.5.1.css' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/stylesheets/jquery.vegas.css' | relative_url }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/stylesheets/main.css' | relative_url }}"
+    />
 
     <script src="//www.google-analytics.com/ga.js"></script>
-    <script type="text/javascript" src="{{ '/assets/javascripts/routes' | relative_url }}"></script>
+    <script
+      type="text/javascript"
+      src="{{ '/assets/javascripts/routes' | relative_url }}"
+    ></script>
     <!--[if lt IE 9]>
-    <link rel="stylesheet" href="{{ '/assets/stylesheets/leaflet-0.5.1.ie.css' | relative_url }}" />
-    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <link
+        rel="stylesheet"
+        href="{{ '/assets/stylesheets/leaflet-0.5.1.ie.css' | relative_url }}"
+      />
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-</head>
+  </head>
 
-<body>
+  <body>
+    {{ content }}
 
+    <script
+      src="{{ '/assets/javascripts/jquery-1.7.1.min.js' | relative_url }}"
+      type="text/javascript"
+    ></script>
+    <script
+      src="{{ '/assets/javascripts/modernizr.custom.80985.js' | relative_url }}"
+      type="text/javascript"
+    ></script>
+    <script
+      src="{{ '/assets/javascripts/jquery.jplayer-2.2.0.min.js' | relative_url }}"
+      type="text/javascript"
+    ></script>
+    <script
+      src="{{ '/assets/javascripts/jquery.idle-timer.js' | relative_url }}"
+      type="text/javascript"
+    ></script>
+    <script
+      src="{{ '/assets/javascripts/jquery.vegas.js' | relative_url }}"
+      type="text/javascript"
+    ></script>
+    <script
+      src="{{ '/assets/javascripts/leaflet-0.5.1.js' | relative_url }}"
+      type="text/javascript"
+    ></script>
+    <script
+      src="{{ '/assets/javascripts/keymaster.min.js' | relative_url }}"
+      type="text/javascript"
+    ></script>
+    <script
+      src="{{ '/assets/javascripts/main.js' | relative_url }}"
+      type="text/javascript"
+    ></script>
 
-{{ content }}
-
-
-
-<script src="{{ '/assets/javascripts/jquery-1.7.1.min.js' | relative_url }}" type="text/javascript"></script>
-<script src="{{ '/assets/javascripts/modernizr.custom.80985.js' | relative_url }}" type="text/javascript"></script>
-<script src="{{ '/assets/javascripts/jquery.jplayer-2.2.0.min.js' | relative_url }}" type="text/javascript"></script>
-<script src="{{ '/assets/javascripts/jquery.idle-timer.js' | relative_url }}" type="text/javascript"></script>
-<script src="{{ '/assets/javascripts/jquery.vegas.js' | relative_url }}" type="text/javascript"></script>
-<script src="{{ '/assets/javascripts/leaflet-0.5.1.js' | relative_url }}" type="text/javascript"></script>
-<script src="{{ '/assets/javascripts/keymaster.min.js' | relative_url }}" type="text/javascript"></script>
-<script src="{{ '/assets/javascripts/main.js' | relative_url }}" type="text/javascript"></script>
-
-<script>
-var _gaq=[['_setAccount','UA-1035987-3'],['_trackPageview']];
-(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-</script>
-
-
-</body>
+    <script>
+      var _gaq = [["_setAccount", "UA-1035987-3"], ["_trackPageview"]];
+      (function (d, t) {
+        var g = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        g.src =
+          ("https:" == location.protocol ? "//ssl" : "//www") +
+          ".google-analytics.com/ga.js";
+        s.parentNode.insertBefore(g, s);
+      })(document, "script");
+    </script>
+  </body>
 </html>
