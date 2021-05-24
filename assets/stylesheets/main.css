@@ -156,6 +156,24 @@ blockquote .author {
   margin-left: -3px !important;
   margin-top: -3px !important;
 }
+.zoom-medium .leaflet-marker-icon {
+  width: 8px !important;
+  height: 8px !important;
+  margin-left: -4px !important;
+  margin-top: -4px !important;
+}
+.zoom-medium-plus .leaflet-marker-icon {
+  width: 10px !important;
+  height: 10px !important;
+  margin-left: -5px !important;
+  margin-top: -5px !important;
+}
+.zoom-max .leaflet-marker-icon {
+  width: 13px !important;
+  height: 13px !important;
+  margin-left: -6.5px !important;
+  margin-top: -6.5px !important;
+}
 
 /* Footer */
 .transition-500 {
