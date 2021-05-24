@@ -91,7 +91,6 @@ $(function () {
                     my_jPlayer.jPlayer("play");
                 }
             },
-            swfPath: "../../src",
             supplied: "mp3,ogg",
             solution: "html,flash",
             wmode: "window",

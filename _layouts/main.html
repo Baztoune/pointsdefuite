@@ -24,11 +24,7 @@
       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
       crossorigin=""
     />
-    <script
-      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-      crossorigin=""
-    ></script>
+
     <link
       rel="stylesheet"
       href="{{ '/assets/stylesheets/main.css' | relative_url }}"
@@ -37,14 +33,20 @@
 
   <body>
     {{ content }}
-
     <script
-      src="{{ '/assets/javascripts/jquery-1.7.1.min.js' | relative_url }}"
-      type="text/javascript"
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
     ></script>
     <script
-      src="{{ '/assets/javascripts/jquery.jplayer-2.2.0.min.js' | relative_url }}"
-      type="text/javascript"
+      src="https://unpkg.com/jquery@3.6.0/dist/jquery.js"
+      crossorigin=""
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.9.2/jplayer/jquery.jplayer.min.js"
+      integrity="sha512-g0etrk7svX8WYBp+ZDIqeenmkxQSXjRDTr08ie37rVFc99iXFGxmD0/SCt3kZ6sDNmr8sR0ISHkSAc/M8rQBqg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     ></script>
     <script
       src="{{ '/assets/javascripts/main.js' | relative_url }}"
