@@ -143,21 +143,6 @@ $(function () {
             }
         });
 
-        // keyboard shortcuts
-        key('right', function(){
-            window.location=$('.icon-next')[0].href;
-        });
-        key('left', function(){
-            window.location=$('.icon-prev')[0].href;
-        });
-        key('space', function(){
-            if(my_jPlayer_data.status.paused){
-                my_jPlayer.jPlayer("play");
-            } else{
-                my_jPlayer.jPlayer("pause");
-            }
-        });
-
         // background
         $.vegas({
             src:'./'+$('#image-wrapper').attr('data-jpg'),
