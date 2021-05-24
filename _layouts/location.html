@@ -4,9 +4,9 @@ layout: main
 nav: page-photo
 ---
 
-<div id="image-wrapper" data-jpg="photo.jpg"></div>
+<div id="image-wrapper" style="background-image: url('photo.jpg')"></div>
 
-<audio autoplay loop>
+<audio id="audio-wrapper" autoplay loop onplay="handleFirstPlay(event)">
   <source src="sound.mp3" type="audio/mpeg" />
   <source src="sound.ogg" type="audio/ogg" />
   <!-- fallback for non supporting browsers goes here -->
