@@ -1,24 +1,45 @@
 ---
 ---
 
-let hasPlayed = false;
-function handleFirstPlay(event) {
-  console.log("First play", event);
-  if (hasPlayed === false) {
-    console.log("Playback fail ?", event);
-    hasPlayed = true;
-
-    let vid = event.target;
-
-    vid.onplay = null;
-
-    // Start whatever you need to do after first playback has started
-  } else {
-    console.log("Playback looks ok", event);
-  }
-}
-
 window.addEventListener("DOMContentLoaded", (event) => {
+  let audio = document.querySelector("#audio-wrapper");
+  if (audio) {
+    let startPlayPromise = audio.play();
+    if (startPlayPromise !== undefined) {
+      startPlayPromise
+        .then(() => {
+          // Start whatever you need to do only after playback
+          // has begun.
+          console.log("PLAYING AUDIO OK");
+        })
+        .catch((error) => {
+          if (error.name === "NotAllowedError") {
+            console.log("SHOW PLAY BUTTON");
+            let div = document.createElement("div");
+            div.setAttribute("id", "mobile-play-button");
+            div.classList.add("absolute-center", "transition-500");
+            document.querySelector("#image-wrapper").append(div);
+            div.addEventListener("click", function (e) {
+              if (audio.paused) {
+                audio.play();
+                div.classList.add("invisible");
+              } else {
+                audio.pause();
+                div.classList.remove("invisible");
+              }
+            });
+          } else {
+            // Handle a load or playback error
+            console.log("ERROR");
+          }
+        });
+    }
+    audio.addEventListener("timeupdate", function (event) {
+      document.querySelector("#progress").value =
+        (audio.currentTime / audio.duration) * 100;
+    });
+  }
+
   if (document.querySelector("#map")) {
     // map
     var firstLoad = true;
