@@ -109,17 +109,6 @@ $(function () {
             }
         });
 
-        $('.player-mute').click(function(e){
-            if(my_jPlayer.jPlayer("option","muted")){
-                my_jPlayer.jPlayer("unmute");
-                $(this).removeClass('icon-unmute').addClass('icon-mute');
-            } else {
-                my_jPlayer.jPlayer("mute");
-                $(this).removeClass('icon-mute').addClass('icon-unmute');
-            }
-        });
-
-        var img = $('#image-wrapper');
-        img.css("background-image", "url(" + img.attr('data-jpg') + ")");
+        $('#image-wrapper').css("background-image", "url(" + $('#image-wrapper').attr('data-jpg') + ")");
     }
 });
