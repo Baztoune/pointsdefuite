@@ -1,28 +1,5 @@
 ---
 ---
-var toggleFullScreen = function toggleFullScreen() {
-    var isFs = document.fullscreen || document.mozFullScreen || document.webkitIsFullScreen;
-    if ((document.fullScreenElement && document.fullScreenElement !== null) ||    // alternative standard method
-        (!document.mozFullScreenElement && !document.webkitFullScreenElement)) {  // current working methods
-        if(!isFs){
-            if (document.documentElement.requestFullScreen) {
-                document.documentElement.requestFullScreen();
-            } else if (document.documentElement.mozRequestFullScreen) {
-                document.documentElement.mozRequestFullScreen();
-            } else if (document.documentElement.webkitRequestFullScreen) {
-                document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-            }
-        } else {
-            if (document.cancelFullScreen) {
-                document.cancelFullScreen();
-            } else if (document.mozCancelFullScreen) {
-                document.mozCancelFullScreen();
-            } else if (document.webkitCancelFullScreen) {
-                document.webkitCancelFullScreen();
-            }
-        }
-    }
-}
 
 $(function () {
     if ($('#map').length > 0) {
@@ -149,26 +126,5 @@ $(function () {
             fade:2000,
             loading:false
         });
-    }
-
-    $(document).bind({
-        "idle.idleTimer" : function(){
-            if(!($.jPlayer.platform.mobile || $.jPlayer.platform.tablet) && $('#footer:hover').length === 0){
-                // si on n'est pas sur mobile
-                // si on n'est pas au dessus du footer
-                // on le cache
-                $('#footer').addClass('invisible');
-            }
-        },
-        "active.idleTimer": function(){
-                $('#footer').removeClass('invisible');
-        }
-    });
-    $.idleTimer(1000);
-
-    if(Modernizr.fullscreen){
-        $('.player-fullscreen').click(toggleFullScreen);
-    } else {
-        $('.player-fullscreen').addClass('invisible');
     }
 });
