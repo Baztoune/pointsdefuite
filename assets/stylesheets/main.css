@@ -14,9 +14,6 @@ body {
   height: 100%;
   font-size: 16px;
 }
-h3 {
-  margin: 0;
-}
 a {
   text-decoration: none;
   color: #000000;
@@ -25,7 +22,6 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
 .textCenter {
   text-align: center;
 }
@@ -35,6 +31,14 @@ a:hover {
   top: 0;
   bottom: 0;
   width: 100%;
+}
+
+#image-wrapper {
+  min-height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .container {
@@ -155,9 +159,6 @@ blockquote .author {
 
 /* Footer */
 .transition-500 {
-  -webkit-transition: all 0.5s ease-out; /* Safari 3.2+, Chrome */
-  -moz-transition: all 0.5s ease-out; /* Firefox 4-15 */
-  -o-transition: all 0.5s ease-out; /* Opera 10.5–12.00 */
   transition: all 0.5s ease-out; /* Firefox 16+, Opera 12.50+ */
 }
 #footer,
@@ -202,10 +203,6 @@ blockquote .author {
 }
 .footer-right-block {
   width: 160px;
-}
-.footer-right {
-  float: right;
-  padding-top: 5px;
 }
 
 /* icons */

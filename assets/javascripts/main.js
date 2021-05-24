@@ -120,11 +120,7 @@ $(function () {
             }
         });
 
-        // background
-        $.vegas({
-            src:'./'+$('#image-wrapper').attr('data-jpg'),
-            fade:2000,
-            loading:false
-        });
+        var img = $('#image-wrapper');
+        img.css("background-image", "url(" + img.attr('data-jpg') + ")");
     }
 });
