@@ -31,15 +31,13 @@ $(function () {
         $.getJSON('/locations.json', function (data) {
             for (var i = 0; i < data.length; i++) {
                 var location = new L.LatLng(data[i].latitude, data[i].longitude);
-                var titre = data[i].titre;
                 var marker = new L.Marker(location, {
                     icon: customIcon,
-                    riseOnHover: true
                 });
                 marker.bindPopup(
                       "<div class=\"textCenter\">"
                     + "<a href=\"" + data[i].friendlyUrlName + "\">"
-                    + titre
+                    + data[i].titre
                     + "</a>"
                     + "</div>", {
                         maxWidth: '400',
@@ -72,43 +70,5 @@ $(function () {
         });
     }
 
-    if ($('#player-wrapper').length > 0) {
-        // load player
-        var my_jPlayer = $("#player-wrapper");
-        my_jPlayer.jPlayer({
-            ready: function () {
-                $(this).jPlayer("setMedia", {
-                    mp3: './'+my_jPlayer.attr('data-mp3'),
-                    oga: './'+my_jPlayer.attr('data-oga'),
-                    volume:0
-                });
-                if($.jPlayer.platform.mobile || $.jPlayer.platform.tablet) {
-                    // needed on mobile devices
-                    $('#image-wrapper').append(
-                        '<div class="absolute-center transition-500" id="mobile-play-button"></div>'
-                    );
-                } else {
-                    my_jPlayer.jPlayer("play");
-                }
-            },
-            supplied: "mp3,ogg",
-            solution: "html,flash",
-            wmode: "window",
-            loop: true
-        });
-        var my_jPlayer_data = my_jPlayer.data("jPlayer");
-
-        // bind controls
-        $("body").on("touchstart", "#image-wrapper", function(e) {
-            if(my_jPlayer_data.status.paused){
-                my_jPlayer.jPlayer("play");
-                $('#mobile-play-button').addClass('invisible');
-            } else{
-                my_jPlayer.jPlayer("pause");
-                $('#mobile-play-button').removeClass('invisible');
-            }
-        });
-
-        $('#image-wrapper').css("background-image", "url(" + $('#image-wrapper').attr('data-jpg') + ")");
-    }
+    $('#image-wrapper').css("background-image", "url(" + $('#image-wrapper').attr('data-jpg') + ")");
 });

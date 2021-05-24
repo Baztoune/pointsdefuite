@@ -5,6 +5,15 @@ nav: page-photo
 ---
 
 <div id="image-wrapper" data-jpg="photo.jpg"></div>
-<div id="player-wrapper" data-mp3="sound.mp3" data-ogg="sound.ogg"></div>
+
+<audio autoplay loop>
+  <source src="sound.mp3" type="audio/mpeg" />
+  <source src="sound.ogg" type="audio/ogg" />
+  <!-- fallback for non supporting browsers goes here -->
+  <p>
+    Your browser does not support HTML5 audio, but you can still
+    <a href="sound.mp3">download the music</a>.
+  </p>
+</audio>
 
 {% include footer.html %}
