@@ -11,10 +11,16 @@ permalink: /help
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-
-    <link
+    <script
+    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""
+  ></script>
+  <link
       rel="stylesheet"
-      href="//cdn.leafletjs.com/leaflet-0.4.5/leaflet.css"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
     />
     <style>
       #map {
@@ -38,22 +44,15 @@ permalink: /help
     <textarea class="texta"></textarea>
     <div class="map-container"><div id="map"></div></div>
 
-    <script
-      src="{{ '/assets/javascripts/jquery-1.7.1.min.js' | relative_url }}"
-      type="text/javascript"
-    ></script>
-    <script
-      src="{{ '/assets/javascripts/leaflet-0.5.1.js' | relative_url }}"
-      type="text/javascript"
-    ></script>
-
     <script>
-      $(function(){
-          if ($('#map').length > 0) {
-              $('#map').css('cursor', 'crosshair');
+          
               var map = L.map('map').setView([48.893615361480194, 2.3291015625], 5);
               var markerLayer = new L.LayerGroup().addTo(map);
-
+              var customIcon = new L.Icon({
+      iconUrl: "{{ '/assets/images/point-13px.png' | relative_url }}",
+      iconSize: [13, 13],
+      popupAnchor: [0, -13],
+    });
               L.Icon.Default.imagePath = '{{ '/assets/images' | relative_url }}';
               L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                   maxZoom: 18
@@ -67,14 +66,14 @@ permalink: /help
                       "assets: /photos/exemple" + "\n"+
                       "lat: " + e.latlng.lat + "\n"+
                       "lon: " + e.latlng.lng + "\n"+
-                      "---" + "\n"
-                  $('.texta')[0].value= s
+                      "---" + "\n";
+                  document.getElementsByClassName('texta')[0].value= s;
 
                   markerLayer.clearLayers();
-                  markerLayer.addLayer(L.marker([e.latlng.lat,e.latlng.lng]));
+                  markerLayer.addLayer(L.marker([e.latlng.lat,e.latlng.lng], {
+            icon: customIcon,
+          }));
               });
-          }
-      });
     </script>
   </body>
 </html>
