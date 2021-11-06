@@ -28,12 +28,20 @@ find . -iname '*.ogg' -execdir mv {} sound.ogg \;
 
 ## TODO
 
-- limitation de taille (
+- limitation de taille
   - remove ogg ?
   - git-lfs ?
   - outsource CDN ?
-- définir régions du monde split horizontal/vertical
-- utiliser mapbox Hélène
-- bug affichage navigation vers photo puis retour sur map
-- ajouter précédent/suivant
+- définir régions du monde split horizontal (desktop) /vertical (mobile)
+- ✅ utiliser mapbox Hélène
+- bug affichage navigation vers photo puis retour sur map (que sur Chrome)
+- ajouter précédent/suivant (alphabétique)
 - CSS mobile (footer)
+- modifier texte page info
+- intégrer villes
+- footer sur page d'accueil est hidden
+- scrollable bandeau vignettes (mobile)
+- page d'accueil : footer vignettes
+- page photo : "précédente", "suivante", "retourner à la carte"
+- logo milieu
+- encart haut droite "info" "contact" "texte d'intro"

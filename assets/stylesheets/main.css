@@ -181,9 +181,10 @@ blockquote .author {
 }
 #footer,
 #push {
-  height: 60px;
+  height: 160px;
 }
 #footer {
+  z-index: 1000;
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -352,4 +353,33 @@ blockquote .author {
   .icon-fullscreen {
     display: none;
   }
+}
+
+#vignettes {
+  height: 100px;
+}
+#vignettes div {
+  opacity: 0.6;
+  border: 2px solid rgb(202, 202, 202);
+  cursor: pointer;
+}
+#vignettes div:hover {
+  border: 2px solid gray;
+  opacity: 1;
+}
+#vignettes .france {
+  background: url({{"/assets/images/map-background.png"|relative_url}});
+  background-size: cover;
+}
+#vignettes .islande {
+  background: url({{"/assets/images/map-background.png"|relative_url}});
+  background-size: cover;
+}
+#vignettes .nz {
+  background: url({{"/assets/images/map-background.png"|relative_url}});
+  background-size: cover;
+}
+#vignettes .ecosse {
+  background: url({{"/assets/images/map-background.png"|relative_url}});
+  background-size: cover;
 }
