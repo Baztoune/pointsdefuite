@@ -34,10 +34,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
           }
         });
     }
-    audio.addEventListener("timeupdate", function (event) {
-      document.querySelector("#progress").value =
-        (audio.currentTime / audio.duration) * 100;
-    });
   }
 
   if (document.querySelector("#map")) {
