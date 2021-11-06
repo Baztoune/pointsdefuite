@@ -42,9 +42,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
     var tileLayer = L.tileLayer(
       "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
       {
-        id: "baztoune/ckp1ia04k2yky18rw1ml5hw7c",
+        id: "helemalda/ckm7qvd0jg9os17qnqhn6h1vc",
         accessToken:
-          "pk.eyJ1IjoiYmF6dG91bmUiLCJhIjoib0Q0LWtMQSJ9.yK53blLhQb69aKjqo2CAZQ",
+          "pk.eyJ1IjoiaGVsZW1hbGRhIiwiYSI6ImNrbTd0bmJlbjA3OXUyb3BoOWZwMGU2dDkifQ.UMw7_4tHL_8pgunSuWv_tw",
         attribution: '<a href="http://mapbox.com/about/maps">Mapbox Terms</a>',
         maxZoom: 10,
         minZoom: 2,

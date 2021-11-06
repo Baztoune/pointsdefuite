@@ -25,3 +25,13 @@ find . -iname '*.jpeg' -execdir mv {} photo.jpg \;
 find . -iname '*.mp3' -execdir mv {} sound.mp3 \;
 find . -iname '*.ogg' -execdir mv {} sound.ogg \;
 ```
+
+## TODO
+
+- limitation de taille (
+  - remove ogg ?
+  - git-lfs ?
+  - outsource CDN ?
+- définir régions du monde split horizontal/vertical
+- utiliser mapbox Hélène
+- bug affichage navigation vers photo puis retour sur map
