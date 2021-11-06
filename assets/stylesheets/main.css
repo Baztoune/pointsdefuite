@@ -78,11 +78,13 @@ div.absolute-center:active {
   margin: auto;
 }
 .page-contact {
+  background-color: #f9fcfb !important;
   background: url({{"/assets/images/fond-pagecontacts.jpg"|relative_url}})
     no-repeat top left;
   background-size: contain;
 }
 .page-apropos {
+  background-color: #f9fcfb !important;
   background: url({{"/assets/images/fond-pageinfo.jpg"|relative_url}}) no-repeat
     top right;
   background-size: contain;
@@ -113,9 +115,7 @@ blockquote .author {
 }
 .page-contact dd {
   color: #4d677e;
-}
-.section-2 {
-  margin-top: 70px !important;
+  margin-inline-start: 0px !important;
 }
 
 /* Map */
@@ -203,7 +203,7 @@ blockquote .author {
   position: relative;
   margin: 0 auto;
   width: auto;
-  max-width: 601px;
+  max-width: 280px;
   padding-top: 5px;
 }
 
@@ -213,14 +213,14 @@ blockquote .author {
   float: left;
 }
 .footer-left-block {
-  width: 160px;
+  width: 48px;
 }
 .footer-center-block {
-  width: 201px;
+  width: 100px;
   margin: 0 40px;
 }
 .footer-right-block {
-  width: 160px;
+  width: 48px;
 }
 
 /* icons */

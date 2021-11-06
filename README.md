@@ -35,3 +35,5 @@ find . -iname '*.ogg' -execdir mv {} sound.ogg \;
 - définir régions du monde split horizontal/vertical
 - utiliser mapbox Hélène
 - bug affichage navigation vers photo puis retour sur map
+- ajouter précédent/suivant
+- CSS mobile (footer)
