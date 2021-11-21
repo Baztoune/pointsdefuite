@@ -1,18 +1,23 @@
 ---
 title: Location
 layout: main
-nav: page-photo
 ---
 
-<div id="image-wrapper" style="background-image: url('photo.jpg')"></div>
+{% include header.html %}
+
+<div
+  id="image-wrapper"
+  style="background-image: url({{ site.jpgBaseUrl }}{{ page.jpg }})"
+></div>
 <audio id="audio-wrapper" loop>
-  <source src="sound.mp3" type="audio/mpeg" />
-  <source src="sound.ogg" type="audio/ogg" />
-  <!-- fallback for non supporting browsers goes here -->
+  <source src="{{ site.mp3BaseUrl }}{{ page.mp3 }}" type="audio/mpeg" />
   <p>
     Your browser does not support HTML5 audio, but you can still
-    <a href="sound.mp3">download the music</a>.
+    <a href="{{ site.mp3BaseUrl }}{{ page.mp3 }}">download the music</a>.
   </p>
 </audio>
-
-{% include footer.html %}
+<div id="audio-controls">
+  <span class="icon is-large has-text-white is-clickable animate-flicker">
+    <i class="fas fa-2x fa-volume-up"></i>
+  </span>
+</div>

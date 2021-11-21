@@ -1,36 +1,17 @@
 ---
 ---
 
-html {
-  height: 100%;
-  font-family: "Average Sans", sans-serif;
-  font-size: 100%;
-  background-color: #fafcfb;
-}
-/* Global */
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-size: 16px;
-}
-a {
-  text-decoration: none;
-  color: #000000;
-  font-style: italic;
-}
-a:hover {
-  text-decoration: underline;
-}
-.textCenter {
-  text-align: center;
-}
-
 #map {
   position: absolute;
   top: 0;
   bottom: 0;
   width: 100%;
+}
+html {
+  height: 100%;
+}
+html.location body {
+  height: 100%;
 }
 
 #image-wrapper {
@@ -40,41 +21,15 @@ a:hover {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-
-.container {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -60px;
-}
-
-div.absolute-center {
-  position: absolute;
-  z-index: 1000;
-  top: 50%;
-  left: 50%;
-  width: 128px;
-  height: 128px;
-  margin-top: -64px; /* Half the height */
-  margin-left: -64px; /* Half the width */
-  background: url({{"/assets/images/play.png"|relative_url}}) 100% no-repeat;
-  background-size: 100%;
-}
-div.absolute-center:hover {
-  cursor: pointer;
-}
-div.absolute-center:active {
-  margin-top: -62px;
-  margin-bottom: -66px;
-}
-.unjustified {
-  text-align: left;
+.transition-500 {
+  transition: all 0.5s ease-out;
 }
 
 /* Pages */
 .page-content {
   max-width: 600px;
-  padding-bottom: 50px;
+
+  padding-bottom: 20px;
   margin: auto;
 }
 .page-contact {
@@ -88,7 +43,6 @@ div.absolute-center:active {
   background: url({{"/assets/images/fond-pageinfo.jpg"|relative_url}}) no-repeat
     top right;
   background-size: contain;
-  font-size: 1.4em;
 }
 .page-apropos .page-content {
   margin: 100px 80px 0 80px;
@@ -119,20 +73,9 @@ blockquote .author {
 }
 
 /* Map */
-.logo-container {
-  padding: 0 60px;
+.leaflet-bottom {
+  bottom: 150px;
 }
-.logo {
-  width: auto;
-  max-width: 500px;
-  margin: 0 50px;
-  position: relative;
-  z-index: 1000;
-}
-.logo img {
-  width: 100%;
-}
-
 .leaflet-popup-content-wrapper {
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -176,210 +119,119 @@ blockquote .author {
 }
 
 /* Footer */
-.transition-500 {
-  transition: all 0.5s ease-out; /* Firefox 16+, Opera 12.50+ */
-}
-#footer,
-#push {
-  height: 160px;
-}
 #footer {
   z-index: 1000;
   width: 100%;
   position: fixed;
   bottom: 0;
-  border-top: 1px rgba(77, 77, 77, 0.18) solid;
-  background: rgba(248, 249, 249, 0.18);
-}
-.invisible {
-  opacity: 0;
-  -moz-opacity: 0;
-  filter: alpha(opacity=0);
-}
-#footer:hover {
-  background: rgba(248, 249, 249, 1);
-  border-top: 1px rgba(77, 77, 77, 1) solid;
-}
-#footer .footer-center {
-  position: relative;
-  margin: 0 auto;
-  width: auto;
-  max-width: 280px;
-  padding-top: 5px;
-}
-
-.footer-left-block,
-.footer-center-block,
-.footer-right-block {
-  float: left;
-}
-.footer-left-block {
-  width: 48px;
-}
-.footer-center-block {
-  width: 100px;
-  margin: 0 40px;
-}
-.footer-right-block {
-  width: 48px;
-}
-
-/* icons */
-.icon-placeholder {
-  display: inline-block;
-  width: 48px;
-  height: 48px;
-}
-.icon-placeholder a:hover {
-  cursor: pointer;
-}
-.icon-placeholder:active {
-  margin-top: 2px;
-  margin-bottom: -2px;
-}
-.icon-map-placeholder {
-  width: 96px;
-  height: 48px;
-}
-.icon-placeholder a,
-.icon-map-placeholder a {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.icon {
-  background-image: url({{"/assets/images/control-icons.png"|relative_url}});
-}
-.icon.invisible {
-  display: none;
-}
-.icon-info {
-  background-position: 0px -48px;
-}
-.icon-fullscreen {
-  background-position: 0px -144px;
-}
-.icon-play {
-  background-position: 0px -384px;
-}
-.icon-mute {
-  background-position: 0px -336px;
-}
-.icon-unmute {
-  background-position: 0px -624px;
-}
-.icon-random {
-  background-position: 0px -96px;
-}
-.icon-prev {
-  background-position: 0px -240px;
-}
-.icon-map {
-  background-position: 0px -672px;
-}
-.icon-next {
-  background-position: 0px -288px;
-}
-.icon-fb {
-  background-position: 0px -432px;
-}
-.icon-tw {
-  background-position: 0px -528px;
-}
-.icon-contact {
-  background-position: 0px -576px;
-}
-.icon-gp {
-  background-position: 0px -480px;
-}
-.icon-info:hover {
-  background-position: 48px -48px;
-}
-.icon-fullscreen:hover {
-  background-position: 48px -144px;
-}
-.icon-play:hover {
-  background-position: 48px -384px;
-}
-.icon-mute:hover {
-  background-position: 48px -336px;
-}
-.icon-unmute:hover {
-  background-position: 48px -624px;
-}
-.icon-random:hover {
-  background-position: 48px -96px;
-}
-.icon-prev:hover {
-  background-position: 48px -240px;
-}
-.icon-map:hover {
-  background-position: 0px -720px;
-}
-.icon-next:hover {
-  background-position: 48px -288px;
-}
-.icon-fb:hover {
-  background-position: 48px -432px;
-}
-.icon-tw:hover {
-  background-position: 48px -528px;
-}
-.icon-gp:hover {
-  background-position: 48px -480px;
-}
-.icon-contact:hover {
-  background-position: 48px -576px;
-}
-
-/* Responsive */
-@media (max-width: 800px) {
-  .footer-center {
-    width: 200px;
-  }
-  .footer-right-block {
-    display: none;
-  }
-  .footer-left-block {
-    display: none;
-  }
-  .footer-center-block {
-    float: none;
-    margin: 0 auto;
-    padding-right: 100px;
-  }
-}
-@media (max-width: 480px) {
-  .icon-fullscreen {
-    display: none;
-  }
 }
 
 #vignettes {
-  height: 100px;
+  height: 150px;
+  border-top: 1px solid gray;
+  overflow-x: auto;
 }
 #vignettes div {
-  opacity: 0.6;
-  border: 2px solid rgb(202, 202, 202);
-  cursor: pointer;
+  opacity: 0.9;
 }
 #vignettes div:hover {
-  border: 2px solid gray;
   opacity: 1;
 }
-#vignettes .france {
-  background: url({{"/assets/images/map-background.png"|relative_url}});
-  background-size: cover;
+
+#vignettes div > h3 {
+  height: 100%;
+  padding: 5px 0px;
+  background-color: rgba(255, 255, 255, 0.4);
 }
-#vignettes .islande {
-  background: url({{"/assets/images/map-background.png"|relative_url}});
-  background-size: cover;
+#vignettes div > h3:hover {
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
 }
-#vignettes .nz {
-  background: url({{"/assets/images/map-background.png"|relative_url}});
+.france {
+  background: url({{ site.jpgBaseUrl }}/c_thumb,w_300,g_face/pointsdefuite/assets/vignettes/france.jpg);
   background-size: cover;
+  background-position: center;
 }
-#vignettes .ecosse {
-  background: url({{"/assets/images/map-background.png"|relative_url}});
+.danemark {
+  background: url({{ site.jpgBaseUrl }}/c_thumb,w_300,g_face/pointsdefuite/assets/vignettes/danemark.jpg);
   background-size: cover;
+  background-position: center;
+}
+.ecosse {
+  background: url({{ site.jpgBaseUrl }}/c_thumb,w_300,g_face/pointsdefuite/assets/vignettes/ecosse.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.islande {
+  background: url({{ site.jpgBaseUrl }}/c_thumb,w_300,g_face/pointsdefuite/assets/vignettes/islande.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.nouvelle-caledonie {
+  background: url({{ site.jpgBaseUrl }}/c_thumb,w_300,g_face/pointsdefuite/assets/vignettes/nouvelle-caledonie.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.norvege {
+  background: url({{ site.jpgBaseUrl }}/c_thumb,w_300,g_face/pointsdefuite/assets/vignettes/norvege.jpg);
+  background-size: cover;
+  background-position: center;
+}
+/* audio controls */
+#audio-controls {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0.2;
+  }
+}
+.fa-volume-up {
+  animation: fadeIn 2s infinite alternate;
+}
+
+@keyframes wrench {
+  0% {
+    transform: rotate(-12deg);
+  }
+  8% {
+    transform: rotate(12deg);
+  }
+  10%,
+  28%,
+  30%,
+  48%,
+  50%,
+  68% {
+    transform: rotate(24deg);
+  }
+  18%,
+  20%,
+  38%,
+  40%,
+  58%,
+  60% {
+    transform: rotate(-24deg);
+  }
+  75%,
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.fa-volume-mute {
+  animation: wrench 2s ease infinite;
+}
+
+/* override bulma */
+.navbar {
+  z-index: 1000 !important;
+  /* opacity: 0.6; */
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.navbar:hover,
+.navbar.has-active-menu {
+  background-color: rgba(255, 255, 255, 1);
+  /* opacity: 1; */
 }

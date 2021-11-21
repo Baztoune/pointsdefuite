@@ -1,6 +1,8 @@
 title: Points de Fuite
 url: https://pointsdefuite.b5n.fr
 repository: Baztoune/pointsdefuite.github.io
+jpgBaseUrl: https://res.cloudinary.com/dolbs6mfy/image/upload
+mp3BaseUrl: https://res.cloudinary.com/dolbs6mfy/video/upload
 exclude: [.idea]
 collections:
   locations:

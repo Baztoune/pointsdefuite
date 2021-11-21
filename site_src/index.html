@@ -4,17 +4,8 @@ layout: main
 permalink: /
 ---
 
-<div class="map-container">
-  <div id="map" class="leaflet-container leaflet-fade-anim" tabindex="0">
-    <div class="logo">
-      <a href="/" title="Points de Fuite - Carte">
-        <img
-          src="{{ '/assets/images/logo-500px-fondtransparent.png' | relative_url }}"
-          alt="Logo points de fuite"
-        />
-      </a>
-    </div>
-  </div>
-</div>
+{% include header.html %}
+
+<div id="map" class="leaflet-container leaflet-fade-anim" tabindex="0"></div>
 
 {% include footer.html %}

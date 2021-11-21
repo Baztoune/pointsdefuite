@@ -31,7 +31,7 @@ find . -iname '*.ogg' -execdir mv {} sound.ogg \;
 - limitation de taille
   - remove ogg ?
   - git-lfs ?
-  - outsource CDN ?
+  - ✅ outsource CDN ? Cloudinary
 - définir régions du monde split horizontal (desktop) /vertical (mobile)
 - ✅ utiliser mapbox Hélène
 - bug affichage navigation vers photo puis retour sur map (que sur Chrome)
