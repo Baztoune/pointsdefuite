@@ -1,6 +1,6 @@
 # pointsdefuite
 
-pointsdefuite.b5n.fr
+pointsdefuite.net
 
 ## Install
 
@@ -13,9 +13,9 @@ $ bundle exec jekyll serve
 For local vs github relative path comparison
 
 - http://127.0.0.1:4000/paysage/saint-pierre-en-port/
-- https://pointsdefuite.b5n.fr/paysage/saint-pierre-en-port
+- https://pointsdefuite.net/paysage/saint-pierre-en-port
 - http://127.0.0.1:4000/paysage/ecosse/gruinard-bay---scotland/
-- https://pointsdefuite.b5n.fr/paysage/ecosse/gruinard-bay---scotland
+- https://pointsdefuite.net/paysage/ecosse/gruinard-bay---scotland
 
 ## Utils
 
@@ -28,20 +28,18 @@ find . -iname '*.ogg' -execdir mv {} sound.ogg \;
 
 ## TODO
 
-- limitation de taille
-  - remove ogg ?
-  - git-lfs ?
-  - ✅ outsource CDN ? Cloudinary
-- définir régions du monde split horizontal (desktop) /vertical (mobile)
+- ✅ limitation de taille : outsource CDN Cloudinary
+- add open graph https://ogp.me/
+- ✅ définir régions du monde split horizontal (desktop) /vertical (mobile)
 - ✅ utiliser mapbox Hélène
-- bug affichage navigation vers photo puis retour sur map (que sur Chrome)
+- ✅ bug affichage navigation vers photo puis retour sur map (que sur Chrome)
 - ajouter précédent/suivant (alphabétique)
-- CSS mobile (footer)
+- ✅ CSS mobile (footer)
 - modifier texte page info
 - intégrer villes
-- footer sur page d'accueil est hidden
-- scrollable bandeau vignettes (mobile)
-- page d'accueil : footer vignettes
+- ✅ footer sur page d'accueil est hidden
+- ✅ scrollable bandeau vignettes (mobile)
+- ✅ page d'accueil : footer vignettes
 - page photo : "précédente", "suivante", "retourner à la carte"
 - logo milieu
 - encart haut droite "info" "contact" "texte d'intro"
